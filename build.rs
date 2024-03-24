@@ -90,7 +90,7 @@ fn main() {
     // install the toolchain for it.
     let libc = feature_use_libc
         || cfg_use_libc
-        || os != "linux"
+        || (os != "android" && os != "linux")
         || !inline_asm_name_present
         || is_unsupported_abi
         || miri
